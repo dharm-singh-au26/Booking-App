@@ -32,28 +32,28 @@ export const updateRoom = async (req, res, next) => {
     }
   };
   
-  export const deleteHotel = async (req, res, next) => {
+  export const deleteRoom   = async (req, res, next) => {
     try {
-      await Hotel.findByIdAndDelete(req.params.id);
-      res.status(200).json("Hotel Deleted");
+      await Room.findByIdAndDelete(req.params.id);
+      res.status(200).json("Room has been Deleted");
     } catch (error) {
       next(error);
     }
   };
   
-  export const getHotel = async (req, res, next) => {
+  export const getRoom = async (req, res, next) => {
     try {
-      const hotel = await Hotel.findById(req.params.id);
-      res.status(200).json(hotel);
+      const room = await Room.findById(req.params.id);
+      res.status(200).json(room);
     } catch (error) {
       next(error);
     }
   };
   
-  export const getAllHotels = async (req, res, next) => {
+  export const getAllRoom = async (req, res, next) => {
     try {
-      const hotels = await Hotel.find();
-      res.status(200).json(hotels);
+      const rooms = await Room.find();
+      res.status(200).json(rooms);
     } catch (error) {
       next(error);
     }
