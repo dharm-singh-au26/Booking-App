@@ -7,16 +7,17 @@ import {
   getHotel,
   getAllHotels,
 } from "../controllers/hotel.js";
+import { verifyAdmin } from "../utils/verifyToken.js";
 
 // import {createError} from '../utils/error.js'
 const router = express.Router();
 
 // CREATE
-router.post("/", createHotel);
+router.post("/", verifyAdmin, createHotel);
 //UPDATE
-router.put("/:id", updateHotel);
+router.put("/:id", verifyAdmin, updateHotel);
 // //DELETE
-router.delete("/:id", deleteHotel);
+router.delete("/:id", verifyAdmin, deleteHotel);
 
 // // Get
 router.get("/:id", getHotel);
