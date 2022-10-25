@@ -23,6 +23,13 @@ const Header = () => {
       key: "selection",
     },
   ]);
+  const [openOptions, setOpenOptions] = useState(false);
+  const [options, setoptions] = useState({
+    adult: 1,
+    children: 2,
+    room: 1,
+  });
+
   return (
     <div className="header">
       <div className="headerContainer">
@@ -68,10 +75,13 @@ const Header = () => {
 
           <div className="headerSearchItem">
             <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
-            <span onClick={()=> setOpenDate(!openDate)} className="headerSearchText">{`${format(
-              date[0].startDate,
+            <span
+              onClick={() => setOpenDate(!openDate)}
+              className="headerSearchText"
+            >{`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(
+              date[0].endDate,
               "dd/MM/yyyy"
-            )} to ${format(date[0].endDate, "dd/MM/yyyy")} `}</span>
+            )} `}</span>
             {/* condition check  */}
             {openDate && (
               <DateRange
@@ -86,7 +96,33 @@ const Header = () => {
           {/* Person Info  */}
           <div className="headerSearchItem">
             <FontAwesomeIcon icon={faPerson} className="headerIcon" />
-            <span className="headerSearchText">2 Adults 2 Children 1 Room</span>
+            <span className="headerSearchText">{`${options.adult} adult . ${options.children} children . ${options.room} room `}</span>
+            <div className="options">
+              <div className="optionItem">
+                <span className="optionText">Adult</span>
+                <div className="optionCounter">
+                  <button className="optionCounterButton" onClick={}>-</button>
+                  <span className="optionCounterNumber">1</span>
+                  <button className="optionCounterButton">+</button>
+                </div>
+              </div>
+              <div className="optionItem">
+                <span className="optionText">Children</span>
+                <div className="optionCounter">
+                  <button className="optionCounterButton">-</button>
+                  <span className="optionCounterNumber">0</span>
+                  <button className="optionCounterButton">+</button>
+                </div>
+              </div>
+              <div className="optionItem">
+                <span className="optionText">Room</span>
+                <div className="optionCounter">
+                  <button className="optionCounterButton">-</button>
+                  <span className="optionCounterNumber">1</span>
+                  <button className="optionCounterButton">+</button>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="headerSearchItem">
             <button className="headerBtn">Search</button>
