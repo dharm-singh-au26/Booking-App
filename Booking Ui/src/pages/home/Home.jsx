@@ -1,5 +1,6 @@
 import Featured from "../../components/featured/Featured"
 import { FeaturedProperties } from "../../components/featuredProperties/FeaturedProperties"
+import { Footer } from "../../components/footer/Footer"
 import Header from "../../components/header/Header"
 import { MailList } from "../../components/mailList/MailList"
 import Navbar from "../../components/navbar/Navbar"
@@ -19,6 +20,7 @@ function Home() {
     <h1 className="homeTitles">Homes Guest love </h1>
     <FeaturedProperties/>
     <MailList/>
+    <Footer/>
 
     </div>
    
