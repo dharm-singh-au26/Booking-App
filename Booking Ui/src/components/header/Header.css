@@ -79,8 +79,10 @@ border-radius: 20px;
 .date {
     position: absolute;
     top: 50px;
+    z-index: 2;
 }
 .options{
+    z-index: 2;
     position:absolute;
     top: 50px;
     background-color: white ;
