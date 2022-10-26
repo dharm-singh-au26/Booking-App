@@ -11,6 +11,7 @@ function Home() {
     <Header/>
     <div className="homeContainer">
     <Featured/>
+    <h1 className="homeTitles">Browse by property type</h1>
 
     </div>
    
